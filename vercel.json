@@ -1,3 +1,16 @@
 {
     "rewrites": [{ "source": "/r/:id", "destination": "/api/redirect?id=:id" }]
+
+    "headers": [
+        {
+          "source": "/(.*)",
+          "headers": [
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            }
+          ]
+        }
+      ]
+
 }
