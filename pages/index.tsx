@@ -8,7 +8,9 @@ const { Header, Content, Footer } = Layout;
 const { Title } = Typography;
 
 type ShortenLinkResponse = {
-  short_link: string;
+  //short_link: string;
+  guid: string;
+
 }
 
 type ShortenLinkError = {
@@ -29,7 +31,8 @@ export default function Home() {
     try {
       const response = await axios.post<ShortenLinkResponse>('/api/shorten_link', { link });
       setStatus('success');
-      setMessage(response.data?.short_link);
+      //setMessage(response.data?.short_link);
+      setMessage(response.data?.guid);
     }
     catch(e) {
       const error = e as AxiosError<ShortenLinkError>;
@@ -70,7 +73,7 @@ export default function Home() {
               <div className={styles.linkFieldButton}>
                 <Form.Item>
                   <Button type="primary" htmlType="submit" style={{ width: '100%' }} size="large">
-                    Shorten!
+                    Send it!
                   </Button>
                 </Form.Item>
               </div>
@@ -79,9 +82,6 @@ export default function Home() {
           {['error', 'success'].includes(status) && (<Alert showIcon message={message} type={status as 'error' | 'success'} />)}
         </div>
       </Content>
-      <Footer className={styles.footer}>
-        Yet Another Link Shortener (YALS) &copy; 2021
-      </Footer>
     </Layout>
   )
 }

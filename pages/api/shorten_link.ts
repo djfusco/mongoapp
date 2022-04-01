@@ -24,7 +24,8 @@ export default async (req, res) => {
     //return res.json({ short_link: `${process.env.VERCEL_URL}/r/${entry.insertedId}` });
      
     ///return res.json({ short_link: `${valueGUID}` });
-    return res.json({ GUID: `${valueGUID}` });
+    ///return res.json({ GUID: `${valueGUID}` });
+    return res.json({ guid: `${valueGUID}` });
 
   }
 
