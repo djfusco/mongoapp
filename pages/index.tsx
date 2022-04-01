@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>Yet Another Link Shortner</title>
+        <title>Demo Auth</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header>
@@ -55,7 +55,7 @@ export default function Home() {
       </Header>
       <Content className={styles.content}>
         <div className={styles.shortner}>
-          <Title level={5}>Copy &amp; Paste your lengthy link</Title>
+          <Title level={5}>Enter ID (e.g. DJF1)</Title>
           <Form
             form={form}
             onFinish={onFinish}
@@ -64,7 +64,7 @@ export default function Home() {
             <div className={styles.linkField}>
               <div className={styles.linkFieldInput}>
                 <Form.Item name="link" noStyle>
-                  <Input placeholder="https://my-super-long-link.com/blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah" size="large"/>
+                  <Input placeholder="DJF1" size="large"/>
                 </Form.Item>
               </div>
               <div className={styles.linkFieldButton}>
