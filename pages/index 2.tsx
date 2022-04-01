@@ -63,7 +63,11 @@ export default function Home() {
           >
             <div className={styles.linkField}>
               <div className={styles.linkFieldInput}>
-                <Form.Item name="link" noStyle>
+                <Form.Item name="link" noStyle rules={[{
+                  required: true,
+                  message: 'Please paste a correct link',
+                  type: 'url',
+                }]}>
                   <Input placeholder="https://my-super-long-link.com/blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah-blah" size="large"/>
                 </Form.Item>
               </div>
